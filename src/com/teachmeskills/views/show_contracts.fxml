@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teachmeskills.controllers.ShowContractsController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Отчет о состоявшихся сделках:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="contract_table" layoutX="14.0" layoutY="41.0" prefHeight="200.0" prefWidth="781.0">
+         <columns>
+            <TableColumn fx:id="id_contract_column" prefWidth="86.0" text="ID контракта" />
+            <TableColumn fx:id="id_goods_column" prefWidth="64.0" text="ID товара" />
+            <TableColumn fx:id="goods_name_column" prefWidth="132.0" text="Наименование товара" />
+            <TableColumn fx:id="description_column" prefWidth="91.0" text="Описание" />
+            <TableColumn fx:id="count_selled_goods_column" prefWidth="144.0" text="Продано товара (кол.)" />
+            <TableColumn fx:id="contract_price_column" prefWidth="103.0" text="Сумма продажи" />
+            <TableColumn fx:id="bayer_column" prefWidth="160.0" text="Покупатель" />
+         </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="252.0" text="Поиск сделки по категориям: ID контракта, ID товара, наименованию товара, сумме продаж, покупателю:" />
+      <TextField fx:id="input_text" layoutX="14.0" layoutY="269.0" onKeyReleased="#search_contract" prefHeight="25.0" prefWidth="206.0" promptText="поиск..." />
+      <Button layoutX="14.0" layoutY="354.0" mnemonicParsing="false" onAction="#delete_contract" text="Удалить сделку" />
+   </children>
+</Pane>

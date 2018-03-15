@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teachmeskills.controllers.EditSubcategoryController">
+   <children>
+      <TableView fx:id="table" layoutX="8.0" layoutY="42.0" prefHeight="280.0" prefWidth="337.0">
+        <columns>
+          <TableColumn fx:id="edit_subcategory" prefWidth="162.0" text="Подкатегория товаров" />
+          <TableColumn fx:id="edit_category" prefWidth="174.0" text="Категория товаров" />
+        </columns>
+      </TableView>
+      <Label layoutX="9.0" layoutY="14.0" prefHeight="17.0" prefWidth="337.0" text="Подкатегории и категории товаров, которые есть на складе:" />
+      <Button fx:id="add_new_subcategory" layoutX="367.0" layoutY="149.0" mnemonicParsing="false" onAction="#add_new_subcategory" prefHeight="25.0" prefWidth="206.0" text="Добавить подкатегорию" />
+      <TextField fx:id="text_subcat" layoutX="367.0" layoutY="42.0" prefHeight="25.0" prefWidth="206.0" promptText="Введи подкатегорию" />
+      <Button fx:id="edit_button" layoutX="367.0" layoutY="297.0" mnemonicParsing="false" onAction="#update_subcategory" prefHeight="25.0" prefWidth="206.0" text="Редактировать подкатегорию" />
+      <Label layoutX="367.0" layoutY="77.0" text="Категория товаров:" />
+      <RadioButton fx:id="food_goods" layoutX="367.0" layoutY="94.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="197.0" text="продовольственны товары" />
+      <RadioButton fx:id="non_food_goods" layoutX="367.0" layoutY="120.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="197.0" text="непродовольственные товары" />
+      <Button fx:id="delete_sucategory" layoutX="367.0" layoutY="188.0" mnemonicParsing="false" onAction="#delete_sucategory" prefHeight="25.0" prefWidth="206.0" text="Удалить подкатегорию" />
+   </children>
+</Pane>

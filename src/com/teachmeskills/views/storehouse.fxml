@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teachmeskills.controllers.StorehouseController">
+   <children>
+      <TableView fx:id="table" layoutX="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0">
+         <columns>
+            <TableColumn fx:id="goods_name" prefWidth="148.0" text="Наименование товара" />
+            <TableColumn fx:id="description" minWidth="0.0" prefWidth="108.0" text="Описание" />
+            <TableColumn fx:id="goods_price" prefWidth="105.0" text="Цена (руб/(шт, кг)" />
+            <TableColumn fx:id="goods_count" prefWidth="54.0" text="Количество " />
+            <TableColumn fx:id="subcategories_name" prefWidth="99.0" text="Подкатегория" />
+            <TableColumn fx:id="categories_name" prefWidth="109.0" text="Категория" />
+            <TableColumn fx:id="id_goods" prefWidth="75.0" text="ID товара" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="14.0" layoutY="408.0" prefHeight="17.0" prefWidth="354.0" text="Поиск по наименованию, подкатегории, категории, id товара:" />
+      <TextField fx:id="search_word" layoutX="15.0" layoutY="427.0" onKeyReleased="#search_word" prefHeight="25.0" prefWidth="347.0" promptText="поиск товаров..." />
+      <Label layoutX="508.0" layoutY="408.0" prefHeight="17.0" prefWidth="248.0" text="Фильтрация товаров по цене в диапазоне:" />
+      <TextField fx:id="price_from" layoutX="515.0" layoutY="427.0" prefHeight="25.0" prefWidth="87.0" />
+      <Label layoutX="496.0" layoutY="431.0" text="от" />
+      <Label layoutX="618.0" layoutY="431.0" text="до" />
+      <TextField fx:id="price_to" layoutX="642.0" layoutY="427.0" prefHeight="25.0" prefWidth="87.0" />
+      <Button fx:id="button_ok" layoutX="739.0" layoutY="427.0" mnemonicParsing="false" onAction="#filtration_by_price" prefHeight="25.0" prefWidth="35.0" text="GO" />
+      <Button fx:id="edit_subcategory" layoutX="459.0" layoutY="526.0" mnemonicParsing="false" onAction="#edit_subcategory" prefHeight="25.0" prefWidth="178.0" text="редактировать подкатегории" />
+      <Button fx:id="add_goods" layoutX="656.0" layoutY="491.0" mnemonicParsing="false" onAction="#add_new_good" prefHeight="25.0" prefWidth="136.0" text="добавить товар" />
+      <TextField fx:id="input_goods_name" layoutX="15.0" layoutY="491.0" prefHeight="25.0" prefWidth="136.0" promptText="наименование..." />
+      <TextArea fx:id="input_description" layoutX="161.0" layoutY="491.0" prefHeight="25.0" prefWidth="163.0" promptText="описание товара..." />
+      <TextField fx:id="input_price" layoutX="334.0" layoutY="491.0" prefHeight="25.0" prefWidth="52.0" promptText="цена" />
+      <TextField fx:id="input_count" layoutX="397.0" layoutY="491.0" prefHeight="25.0" prefWidth="52.0" promptText="кол-во" />
+      <ComboBox fx:id="subcategory_combo_box" layoutX="459.0" layoutY="491.0" prefHeight="25.0" prefWidth="178.0" promptText="подкатегория товара" />
+      <Button fx:id="refresh" layoutX="10.0" layoutY="596.0" mnemonicParsing="false" onAction="#refresh_window" prefHeight="44.0" prefWidth="227.0" text="Обновить информацию">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="delete_good_button" layoutX="656.0" layoutY="526.0" mnemonicParsing="false" onAction="#delete_good" prefHeight="25.0" prefWidth="136.0" text="удалить товар" />
+      <Button fx:id="update_good_button" layoutX="656.0" layoutY="561.0" mnemonicParsing="false" onAction="#update_good" prefHeight="25.0" prefWidth="136.0" text="редактировать товар" />
+      <Label layoutX="14.0" layoutY="468.0" text="ПРИМЕЧАНИЕ: перед добавлением товара нужно завполнить все поля!!!" />
+      <Button layoutX="271.0" layoutY="596.0" mnemonicParsing="false" onAction="#sell_good" prefHeight="44.0" prefWidth="146.0" text="Продать товар">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="449.0" layoutY="596.0" mnemonicParsing="false" onAction="#show_contracts" prefHeight="44.0" prefWidth="174.0" text="Отчет о продажах">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
